@@ -13,7 +13,12 @@ Go to phpmyadmin and upload the "**ServerSql.sql**" with any Database name.
 
 
 ### Second Step :
-Download "Footballapp" folder 
+Download "Footballapp" folder
+ 
+```ssh
+$ cd FootballApp
+$ npm install
+```
 ###### Requierd to Install Ionic3 Framework:
 ```link
 https://ionicframework.com/docs/v1/guide/installation.html
