@@ -1,0 +1,98 @@
+<ion-content id="welcome">
+
+  <div *ngIf="!isreg && !islogin">
+    <img margin-top src="img/logo.png" class="logo"/>
+    <h1>Premier League</h1>
+    <div class="first">
+      <h1>Football Predictions</h1>
+      <h2>application</h2>
+    </div>
+    <div class="facebook">
+      <button ion-button icon-left block (click)="signup()">
+        <ion-icon name='logo-facebook'></ion-icon>
+        login with facebook
+      </button>
+    </div>
+    <div class="actionsicon">
+      <div class="reg">
+        <button ion-button icon-left block color="danger" (click)="signup()">
+          <ion-icon name='person-add'></ion-icon>
+          Signup
+        </button>
+      </div>
+      <div class="log">
+        <button ion-button icon-left block color="dark" (click)="login()">
+          <ion-icon name='open'></ion-icon>
+          Login</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!isreg && islogin">
+      <div class="backbutt">
+        <button ion-button icon-left (click)="backtomain()">
+          <ion-icon name='arrow-back'></ion-icon>
+          Back
+        </button>
+      </div>
+      <img src="img/logo.png" class="logo"/>
+      <div padding-top text-center class="login">
+        <h2>LOGIN</h2>
+      </div>
+      <form [formGroup]="formlogin">
+        <ion-list class="inputs" inset>
+          <ion-item>
+            <ion-label floating padding-left>Username</ion-label>
+            <ion-input padding-left formControlName="user"
+                       [(ngModel)]="username"
+                       type="text" required ></ion-input>
+          </ion-item>
+          <ion-item  *ngIf="(formlogin.controls.user.hasError('maxlength') || formlogin.controls.user.hasError('pattern')) && formlogin.controls.user.touched">
+            <p>Worng, please check username field.</p>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating padding-left>Password</ion-label>
+            <ion-input padding-left formControlName="pass"
+                       [(ngModel)]="password"
+                       type="password"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="formlogin.controls.pass.hasError('minlength') && formlogin.controls.pass.touched">
+            <p >Sorry, minimum password length is 6!</p>
+          </ion-item>
+
+        </ion-list>
+
+        <ion-row>
+          <ion-col text-center class="logbut">
+            <button ion-button block color="secondary"
+                    ion-button
+                    text-center
+                    type="submit"
+                    [disabled]="!formlogin.valid"
+                    (click)="Loginclick()">
+              Sign in
+            </button>
+          </ion-col>
+        </ion-row>
+      </form>
+
+      <ion-row>
+        <ion-col text-center>
+          <button class="forgetcolor" ion-button clear (click)="onForgotPassword()">
+            Forgot your password?
+          </button>
+        </ion-col>
+      </ion-row>
+  </div>
+
+  <div *ngIf="isreg && !islogin">
+    <div class="backbutt">
+      <button ion-button icon-left (click)="backtomain()">
+        <ion-icon name='arrow-back'></ion-icon>
+        Back
+      </button>
+    </div>
+  </div>
+</ion-content>
+

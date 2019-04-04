@@ -1,0 +1,112 @@
+page-home {
+  @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+  /*ion-content {
+    background-image: url("../../img/coutinho2.png");
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    //padding-top: 10em;
+  }
+  .content-login{
+   // margin-top: 10em;
+    padding-top: 2em;
+  }
+  .titel-home{
+    text-align: center;
+    padding-top: 1em;
+  }*/
+  #welcome {
+    //background-color: rgba(248, 247, 216, 0.7);
+    background: linear-gradient(rgba(65, 105, 225, 0.5), rgba(187, 186, 158, 0.7)), url('../img/BGa.png');
+    position: relative;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    p {
+      font-size: 0.8em;
+      color: #d21333;
+    }
+    h1{
+      margin: 0;
+      text-align: center;
+      font-size: 18px;
+      padding-bottom: 10px;
+    }
+    .login {
+      padding: 0;
+      h2 {
+        //font-family: 'Indie Flower', sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        color: #ECF0F1;
+      }
+    }
+    .logbut{
+      button{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    .inputs{
+      display: block;
+      border-radius: 8px;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      ion-item{
+        //background: transparent!important;
+        //border: 1px solid #fff !important;
+        .item-inner {
+          border: 0!important;
+        }
+      }
+    }
+    .first {
+      h1,h2 {
+        font-family: 'Indie Flower', cursive;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        font-size: 40px;
+        color: #ECF0F1;
+        font-weight: bold;
+      }
+    }
+    .logo{
+      display: block;
+      height: 100px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 5px;
+    }
+    .facebook{
+      margin-top: 25px;
+      width: 75%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .actionsicon{
+      width: 75%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .reg{
+      width: 50%;
+      float: left;
+      padding-right: 20px;
+    }
+    .log{
+      width: 50%;
+      float: right;
+      padding-left: 20px;
+    }
+    .backbutt{
+      padding-top: 5px;
+      padding-left: 5px;
+    }
+    .forgetcolor{
+      color: #ECF0F1;
+    }
+  }
+}

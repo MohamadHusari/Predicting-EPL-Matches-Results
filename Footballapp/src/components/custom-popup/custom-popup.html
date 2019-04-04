@@ -1,0 +1,54 @@
+<!-- Generated template for the CustomPopupComponent component -->
+  <ion-card class="ourcard" >
+    <ion-navbar>
+      <ion-title>{{menuTitle}}</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="closeModal()">
+        <ion-icon name="close-circle"></ion-icon>
+      </button>
+      </ion-buttons>
+    </ion-navbar>
+    <div *ngIf="PredorGoals">
+    <div class="ismain" *ngIf="ishide">
+      <img margin-top src="{{imglink}}" class="teamlogo"/>
+      <span id="name1" class="name" >{{ winnername }}</span>
+    </div>
+    <div class="downtext">
+      <span>{{ourword}}</span>
+    </div>
+    </div>
+      <div class="ourcontent" *ngIf="!PredorGoals">
+        <div class="cleardiv">
+          <div class="event" *ngFor="let item of goalsdilog">
+            <div *ngIf="item['team_name'] == record['team_season_away_name']" class="event-text team-away clearfix">
+              <div class="event-text team-away wrapper">
+                <div class="text-wrapper">
+                  <div class="event-time"> {{ item['elapsed'] }}' </div>
+                  <div *ngIf="item['player_name']" class="event-text-main"> {{ item['player_name'] }} </div>
+                  <div *ngIf="!item['player_name']" class="event-text-main"> {{ item['team_name'] }} </div>
+                  <div *ngIf="item['goal_subtype']" class="event-text-additional"> {{ item['goal_subtype'] }} </div>
+                  <div *ngIf="!item['goal_subtype'] && item['goal_type_desc']" class="event-text-additional"> {{ item['goal_type_desc'] }} </div>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="item['team_name'] == record['team_season_home_name']" class="event-text team-home clearfix">
+              <div class="event-text team-home wrapper">
+                <div class="text-wrapper">
+                  <div class="event-time"> {{ item['elapsed'] }}' </div>
+                  <div *ngIf="item['player_name']" class="event-text-main"> {{ item['player_name'] }} </div>
+                  <div *ngIf="!item['player_name']" class="event-text-main"> {{ item['team_name'] }} </div>
+                  <div *ngIf="item['goal_subtype']" class="event-text-additional"> {{ item['goal_subtype'] }} </div>
+                  <div *ngIf="!item['goal_subtype'] && item['goal_type_desc']" class="event-text-additional"> {{ item['goal_type_desc'] }} </div>
+                </div>
+              </div>
+            </div>
+            <div class="event-icon"><div class="match-event-icon type-goal"></div></div>
+          </div>
+          <div *ngIf="record['number_goal_team_away'] == 0 && record['number_goal_team_home'] == 0" class="downtext">
+            <span style="color: #f53d3d">There is no goals in this match.</span>
+          </div>
+        </div>
+      </div>
+
+  </ion-card>
+
